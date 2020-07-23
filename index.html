@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		div{
+			width: 30px;
+			height: 30px;
+			background: yellow;
+			border-radius: 50%;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<script>
+		var divs=document.querySelectorAll("div");
+		document.onmousemove=function(e){
+			for(let i=0;i<divs.length;i++){
+				setTimeout(function(){
+					divs[i].style.left=e.clientX-divs[i].offsetWidth/2+"px";
+					divs[i].style.top=e.clientY-divs[i].offsetHeight/2+"px";
+				},i*400);
+			}
+		}
+	</script>
+</body>
+</html>
